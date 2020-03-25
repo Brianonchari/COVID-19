@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="china">China</string>
+    <string name="critical">Critical :</string>
+    <string name="recovered">Recovered :</string>
+    <string name="countries">Countries</string>
+    <string name="about">About</string>
+    <string name="global">Global</string>
+</resources>

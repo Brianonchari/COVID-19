@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FD9A09</color>
+    <color name="colorPrimaryDark">#c74b16</color>
+    <color name="colorAccent">#6E7E8B</color>
+
+    <!--    Button colors-->
+
+    <color name="yellow">#FD9A09</color>
+    <color name="darkgray">#6E7E8B</color>
+
+    <color name="linkBlue">#09B0FD</color>
+    <color name="White">#FFFFFF</color>
+
+    <color name="black">#000000</color>
+    <color name="Grey">#c3c3c3 </color>
+
+    <color name="red">#FF0000</color>
+    <color name="green">#008000</color>
+
+    <color name="purple">#800080</color>
+
+
+
+</resources>

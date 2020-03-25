@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dataFragment">
+
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.studycode.recyclerview.ui.countries.CountriesFragment"
+        android:label="data_fragment"
+        tools:layout="@layout/countries_fragment" />
+    <fragment
+        android:id="@+id/globalFragment"
+        android:name="com.studycode.recyclerview.ui.global.GlobalFragment"
+        tools:layout="@layout/global_fragment"
+        android:label="GlobalFragment" />
+</navigation>
