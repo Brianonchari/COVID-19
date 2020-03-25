@@ -10,3 +10,6 @@ Simple app to show all the COVID-19 cases globally
 - [Android Navigation Architecture](https://developer.android.com/guide/navigation/navigation-getting-started)
 - [DataBinding](https://developer.android.com/jetpack/androidx/releases/databinding)
 - [View Model and Live Data](https://developer.android.com/jetpack/androidx/releases/lifecycle)
+
+
+![Alt text](/COVID-18/screenshot.jpg?raw=true "Screenshot")
