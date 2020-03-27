@@ -12,4 +12,5 @@ Simple app to show all the COVID-19 cases globally
 - [View Model and Live Data](https://developer.android.com/jetpack/androidx/releases/lifecycle)
 
 
+![Alt text](https://github.com/Brianonchari/COVID-19/blob/master/home.png "Screenshot")
 ![Alt text](https://github.com/Brianonchari/COVID-19/blob/master/screenshot.png "Screenshot")
