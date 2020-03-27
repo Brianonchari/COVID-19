@@ -11,7 +11,7 @@ Simple app to show all the COVID-19 cases globally
 - [DataBinding](https://developer.android.com/jetpack/androidx/releases/databinding)
 - [View Model and Live Data](https://developer.android.com/jetpack/androidx/releases/lifecycle)
 
-##Api
+## Api
  Api for the currrent cases of COVID-19  https://corona.lmao.ninja/
 
 
