@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.studycode.recyclerview.service.responses.CountriesItem" />
+            type="com.studycode.recyclerview.data.service.responses.CountriesItem" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"

@@ -1,15 +1,13 @@
-package com.studycode.recyclerview.service
+package com.studycode.recyclerview.data.service
 
 import com.google.gson.GsonBuilder
-import com.studycode.recyclerview.service.responses.AllcasesResponse
-import com.studycode.recyclerview.service.responses.Countries
-import com.studycode.recyclerview.service.responses.CountriesItem
+import com.studycode.recyclerview.data.service.responses.AllcasesResponse
+import com.studycode.recyclerview.data.service.responses.CountriesItem
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import retrofit2.http.GET
 import java.security.KeyManagementException
 import java.security.NoSuchAlgorithmException
@@ -18,13 +16,11 @@ import java.util.concurrent.TimeUnit
 interface Api {
     @GET("all")
      suspend fun getAll():Response<AllcasesResponse>
-
     @GET("countries")
     suspend fun allcountries():Response<List<CountriesItem>>
 
     companion object{
         operator fun invoke():Api{
-
             return Retrofit.Builder()
                 .addConverterFactory(ApiWorker.gsonConverter)
                 .baseUrl("https://corona.lmao.ninja/")

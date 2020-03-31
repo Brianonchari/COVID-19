@@ -1,4 +1,4 @@
-package com.studycode.recyclerview.service.responses
+package com.studycode.recyclerview.data.service.responses
 
 data class AllcasesResponse(
     val cases: Int,

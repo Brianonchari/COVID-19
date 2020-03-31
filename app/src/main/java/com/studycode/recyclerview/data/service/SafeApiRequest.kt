@@ -1,25 +1,23 @@
-package com.studycode.recyclerview.service
+package com.studycode.recyclerview.data.service
 
 import com.studycode.recyclerview.utils.ApiException
 import org.json.JSONException
 import org.json.JSONObject
-import retrofit2.Call
 import retrofit2.Response
 
 abstract class SafeApiRequest {
-
-    suspend fun <T:Any> apiRequest(call: suspend()->Response<T>):T{
+    suspend fun <T : Any> apiRequest(call: suspend () -> Response<T>): T {
         val response = call.invoke()
-        if(response.isSuccessful){
+        if (response.isSuccessful) {
             return response.body()!!
-        }else{
+        } else {
             val error = response.errorBody()?.string()
-
             val message = StringBuilder()
-            error?.let{
-                try{
+            error?.let {
+                try {
                     message.append(JSONObject(it).getString("message"))
-                }catch(e: JSONException){ }
+                } catch (e: JSONException) {
+                }
                 message.append("\n")
             }
             message.append("Error Code: ${response.code()}")

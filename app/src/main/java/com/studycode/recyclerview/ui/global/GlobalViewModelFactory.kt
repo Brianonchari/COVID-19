@@ -2,8 +2,7 @@ package com.studycode.recyclerview.ui.global
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.studycode.recyclerview.service.repositories.CountriesRepository
-import com.studycode.recyclerview.service.repositories.GlobalRepository
+import com.studycode.recyclerview.data.service.repositories.GlobalRepository
 
 @Suppress("UNCHECKED_CAST")
 class GlobalViewModelFactory (private val repository: GlobalRepository): ViewModelProvider.NewInstanceFactory(){

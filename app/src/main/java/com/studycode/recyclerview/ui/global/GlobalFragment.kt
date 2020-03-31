@@ -1,23 +1,16 @@
 package com.studycode.recyclerview.ui.global
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.get
-
+import androidx.lifecycle.ViewModelProviders
 import com.studycode.recyclerview.R
-import com.studycode.recyclerview.databinding.GlobalFragmentBinding
-import com.studycode.recyclerview.service.Api
-import com.studycode.recyclerview.service.repositories.GlobalRepository
+import com.studycode.recyclerview.data.service.Api
+import com.studycode.recyclerview.data.service.repositories.GlobalRepository
 import kotlinx.android.synthetic.main.global_fragment.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class GlobalFragment : Fragment() {
 
@@ -29,29 +22,26 @@ class GlobalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.global_fragment, container, false)
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val api = Api()
-        val repository =GlobalRepository(api)
+        val repository = GlobalRepository(api)
         factory = GlobalViewModelFactory(repository)
-        viewModel = ViewModelProviders.of(this,factory).get(GlobalViewModel::class.java)
-//        viewModel.getGlobaldata().toString(
-        GlobalScope.launch(Dispatchers.Main){
-            cases.text = api.getAll().body().toString()
+        viewModel = ViewModelProviders.of(this, factory).get(GlobalViewModel::class.java)
+        viewModel.getGlobalData()
+        viewModel.global.observe(viewLifecycleOwner, Observer { cases ->
+            global_cases.text = cases.cases.toString()
+        })
 
-            if(api.getAll().isSuccessful){
-            }
+        viewModel.global.observe(viewLifecycleOwner, Observer { deaths ->
+            global_deaths.text = deaths.deaths.toString()
+        })
 
-        }
-
-
-//        viewModel.global.observe(viewLifecycleOwner, Observer { cases->
-//
-//        })
-
+        viewModel.global.observe(viewLifecycleOwner, Observer { recovered ->
+            global_recovered.text = recovered.recovered.toString()
+        })
     }
 
 }

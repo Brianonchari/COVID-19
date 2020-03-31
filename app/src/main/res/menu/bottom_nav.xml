@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/global"
+    <item android:id="@+id/globalFragment"
         android:title="@string/global"
         android:icon="@drawable/globe"/>
 
 
     <item
-        android:id="@+id/countries"
+        android:id="@+id/dataFragment"
         android:title="@string/countries"
         android:icon="@drawable/flag"/>
 
-<!--    <item android:id="@+id/about"-->
-<!--        android:title="@string/about"-->
-<!--        android:icon="@drawable/about"/>-->
+    <item android:id="@+id/aboutFragment"
+        android:title="@string/about"
+        android:icon="@drawable/health"/>
 
 </menu>

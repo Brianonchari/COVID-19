@@ -2,7 +2,7 @@ package com.studycode.recyclerview.ui.countries
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.studycode.recyclerview.service.repositories.CountriesRepository
+import com.studycode.recyclerview.data.service.repositories.CountriesRepository
 
 @Suppress("UNCHECKED_CAST")
 class CountriesViewModelFactory (private val repository: CountriesRepository):ViewModelProvider.NewInstanceFactory(){

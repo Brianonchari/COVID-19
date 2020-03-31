@@ -1,106 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="viewmodel"
-            type="com.studycode.recyclerview.service.responses.AllcasesResponse" />
+            type="com.studycode.recyclerview.data.service.responses.AllcasesResponse" />
     </data>
 
-    <FrameLayout
+    <FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".ui.global.GlobalFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="30dp"
             android:elevation="8dp"
+            android:padding="30dp"
+
             app:cardCornerRadius="8dp">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/global_cases"
+                    android:textColor="#002F57"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Global Cases"
-                        android:textColor="#002F57"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:text="@string/cases" />
 
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/global_cases"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cases :" />
-
-                        <TextView
-                            android:id="@+id/cases"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@{``+viewmodel.cases}"
-                            tools:text="1234"
-                            android:textColor="@color/yellow" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Deaths:"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/red"
-                            tools:text="110"
-                            android:text="@{``+viewmodel.deaths}"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/recovered"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/green"
-                            tools:text="123456"
-                            android:text="@{``+viewmodel.recovered}"/>
-
-
-                    </LinearLayout>
+                        android:text="@{`` +viewmodel.cases}"
+                        android:textColor="@color/yellow"
+                        tools:text="1234" />
                 </LinearLayout>
-            </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deaths:" />
+
+                    <TextView
+                        android:id="@+id/global_deaths"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.deaths}"
+                        android:textColor="@color/red"
+                        tools:text="110" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recovered" />
+
+                    <TextView
+                        android:id="@+id/global_recovered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewmodel.recovered}"
+                        android:textColor="@color/green"
+                        tools:text="123456" />
+                </LinearLayout>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-
     </FrameLayout>
 </layout>

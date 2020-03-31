@@ -8,11 +8,16 @@
     <fragment
         android:id="@+id/dataFragment"
         android:name="com.studycode.recyclerview.ui.countries.CountriesFragment"
-        android:label="data_fragment"
+        android:label="Countries"
         tools:layout="@layout/countries_fragment" />
     <fragment
         android:id="@+id/globalFragment"
         android:name="com.studycode.recyclerview.ui.global.GlobalFragment"
-        tools:layout="@layout/global_fragment"
-        android:label="GlobalFragment" />
+        android:label="Global Cases"
+        tools:layout="@layout/global_fragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.studycode.recyclerview.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/about_fragment" />
 </navigation>
