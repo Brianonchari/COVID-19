@@ -31,6 +31,7 @@ class CountriesFragment : Fragment() {
         factory = CountriesViewModelFactory(repository)
         viewModel = ViewModelProviders.of(this, factory).get(CountriesViewModel::class.java)
         viewModel.getCountries()
+
         viewModel.countries.observe(viewLifecycleOwner, Observer { countries ->
             recycler_view_data.also {
                 it.layoutManager = LinearLayoutManager(requireContext())
@@ -40,7 +41,14 @@ class CountriesFragment : Fragment() {
         })
 
         swipe_refresh.setOnRefreshListener {
-            swipe_refresh.isRefreshing = false
+            viewModel.countries.observe(viewLifecycleOwner, Observer { countries ->
+                recycler_view_data.also {
+                    it.layoutManager = LinearLayoutManager(requireContext())
+                    it.setHasFixedSize(true)
+                    it.adapter = CountriesAdapter(countries)
+                }
+            })
+            swipe_refresh.isRefreshing = false 
         }
         setHasOptionsMenu(true)
     }

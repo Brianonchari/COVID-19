@@ -14,16 +14,16 @@ import java.security.NoSuchAlgorithmException
 import java.util.concurrent.TimeUnit
 
 interface Api {
-    @GET("all")
+    @GET("v2/all")
      suspend fun getAll():Response<AllcasesResponse>
-    @GET("countries")
+    @GET("v2/countries")
     suspend fun allcountries():Response<List<CountriesItem>>
 
     companion object{
         operator fun invoke():Api{
             return Retrofit.Builder()
                 .addConverterFactory(ApiWorker.gsonConverter)
-                .baseUrl("https://corona.lmao.ninja/")
+                .baseUrl("https://disease.sh/")
                 .client(ApiWorker.client)
                 .build()
                 .create(Api::class.java)

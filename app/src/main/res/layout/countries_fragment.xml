@@ -18,6 +18,7 @@
          <androidx.recyclerview.widget.RecyclerView
              android:id="@+id/recycler_view_data"
              android:layout_width="match_parent"
+             android:scrollbars="horizontal"
              android:layout_height="match_parent"/>
      </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
    </LinearLayout>
