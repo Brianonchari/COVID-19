@@ -14,6 +14,6 @@ Simple app to show all the COVID-19 cases globally
 ## Api
  Api for the currrent cases of COVID-19  https://corona.lmao.ninja/
 
-
+## Mobile Screens
 ![Alt text](https://github.com/Brianonchari/COVID-19/blob/master/home.png "Screenshot")
 ![Alt text](https://github.com/Brianonchari/COVID-19/blob/master/screenshot.png "Screenshot")
