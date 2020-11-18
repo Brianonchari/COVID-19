@@ -4,6 +4,8 @@ Simple app to show all the COVID-19 cases globally
 
 <img src="./ReadMeResources/icon.jpg" height="100px" width="auto" style="border-radius:50%;"/>
 
+#### Work In Progress
+
 ### Dependancies
 - Kotlin dependancy injection [Kodein](https://kodein.org/di/)
 - [Retrofit](https://square.github.io/retrofit/)
